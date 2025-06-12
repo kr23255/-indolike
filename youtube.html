@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YouTube Clone</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      color: red;
+    }
+
+    .logo span {
+      font-weight: bold;
+      color: black;
+      margin-left: 8px;
+    }
+
+    .search-bar {
+      flex: 1;
+      display: flex;
+      max-width: 600px;
+      margin: 0 20px;
+    }
+
+    .search-bar input {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-right: none;
+      border-radius: 2px 0 0 2px;
+    }
+
+    .search-bar button {
+      padding: 8px 16px;
+      border: 1px solid #ccc;
+      background: #f8f8f8;
+      cursor: pointer;
+      border-radius: 0 2px 2px 0;
+    }
+
+    .icons i {
+      font-size: 20px;
+      margin-left: 20px;
+      cursor: pointer;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    .sidebar {
+      width: 200px;
+      background-color: #fff;
+      padding: 20px;
+      border-right: 1px solid #ddd;
+      height: calc(100vh - 60px);
+      position: sticky;
+      top: 60px;
+    }
+
+    .sidebar a {
+      display: block;
+      text-decoration: none;
+      color: #000;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    main.videos {
+      flex: 1;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .video-card {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+
+    .video-card:hover {
+      transform: scale(1.02);
+    }
+
+    .video-card img {
+      width: 100%;
+      display: block;
+    }
+
+    .video-info {
+      display: flex;
+      padding: 12px;
+    }
+
+    .channel-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 12px;
+    }
+
+    .text h4 {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .text p {
+      margin: 4px 0;
+      color: #555;
+      font-size: 14px;
+    }
+  </style>
+
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <i class="fab fa-youtube"></i>
+      <span>YouTube</span>
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search" />
+      <button><i class="fas fa-search"></i></button>
+    </div>
+    <div class="icons">
+      <i class="fas fa-video"></i>
+      <i class="fas fa-bell"></i>
+      <i class="fas fa-user-circle"></i>
+    </div>
+  </header>
+
+  <!-- Sidebar + Videos -->
+  <div class="container">
+    <nav class="sidebar">
+      <a href="#"><i class="fas fa-home"></i> Home</a>
+      <a href="#"><i class="fas fa-fire"></i> Trending</a>
+      <a href="#"><i class="fas fa-folder"></i> Library</a>
+    </nav>
+
+    <main class="videos">
+      <!-- Video Card 1 -->
+      <div class="video-card">
+        <img src="https://via.placeholder.com/300x170" alt="Video thumbnail" />
+        <div class="video-info">
+          <img class="channel-icon" src="https://via.placeholder.com/40" alt="Channel Icon" />
+          <div class="text">
+            <h4>How to Code a Website</h4>
+            <p>CodeWithMe</p>
+            <p>2M views • 3 days ago</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video Card 2 -->
+      <div class="video-card">
+        <img src="https://via.placeholder.com/300x170" alt="Video thumbnail" />
+        <div class="video-info">
+          <img class="channel-icon" src="https://via.placeholder.com/40" alt="Channel Icon" />
+          <div class="text">
+            <h4>Funny Cat Compilation</h4>
+            <p>CatTV</p>
+            <p>1.5M views • 1 week ago</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video Card 3 -->
+      <div class="video-card">
+        <img src="https://via.placeholder.com/300x170" alt="Video thumbnail" />
+        <div class="video-info">
+          <img class="channel-icon" src="https://via.placeholder.com/40" alt="Channel Icon" />
+          <div class="text">
+            <h4>Top 10 Coding Tips</h4>
+            <p>DevSimplified</p>
+            <p>900K views • 2 days ago</p>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+</body>
+</html>
