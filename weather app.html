@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather App</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+    }
+
+    .weather-container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 300px;
+    }
+
+    .weather-container h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .input-group {
+      display: flex;
+      margin-bottom: 20px;
+    }
+
+    .input-group input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 8px 0 0 8px;
+      font-size: 16px;
+    }
+
+    .input-group button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #fff;
+      color: #0072ff;
+      font-weight: bold;
+      border-radius: 0 8px 8px 0;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .input-group button:hover {
+      background-color: #ddd;
+    }
+
+    .weather-info {
+      margin-top: 20px;
+    }
+
+    .weather-info h2 {
+      font-size: 24px;
+    }
+
+    .weather-info p {
+      margin: 8px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="weather-container">
+    <h1>Weather App</h1>
+    <div class="input-group">
+      <input type="text" id="cityInput" placeholder="Enter city name..." />
+      <button onclick="getWeather()">Search</button>
+    </div>
+    <div class="weather-info" id="weatherInfo">
+      <h2>City Name</h2>
+      <p>Temperature: -- °C</p>
+      <p>Condition: --</p>
+    </div>
+  </div>
+
+  <script>
+    function getWeather() {
+      const city = document.getElementById('cityInput').value;
+      const weatherInfo = document.getElementById('weatherInfo');
+
+      // Placeholder – Replace this part with actual API call
+      weatherInfo.innerHTML = `
+        <h2>${city}</h2>
+        <p>Temperature: 25°C</p>
+        <p>Condition: Sunny</p>
+      `;
+    }
+  </script>
+
+</body>
+</html>
